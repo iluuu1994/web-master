@@ -359,9 +359,6 @@ switch ($event) {
                 $message .= sprintf(
                     "Author: %s\r\n\r\n%s", $username, $description);
                 break;
-            case 'closed':
-                $message .= "\r\nClosed by $username.";
-                break;
             case 'reopened':
                 $message .= "\r\nReopened by $username.";
                 break;
@@ -379,6 +376,8 @@ switch ($event) {
             case 'demilestoned':
             case 'ready_for_review':
             case 'review_requested':
+            case 'closed':
+            case 'converted_to_draft':
                 // Ignore these actions
                 break 2;
             default:
