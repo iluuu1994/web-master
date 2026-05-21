@@ -6,7 +6,7 @@ use PDO;
 
 final class DB extends PDO
 {
-    public static function connect(): self
+    public static function connect(string $dsn, ?string $username = null, ?string $password = null, ?array $options = null): static
     {
         $connectionConfig = 'mysql:host=' . self::getHost() . ';port=' . self::getPort() . ';dbname=' . self::getDatabase();
 
