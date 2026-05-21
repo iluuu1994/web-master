@@ -115,7 +115,7 @@ function load_month(DB $pdo, $year, $month, $cat)
                 list(, , $dd) = explode('-', $row['sdato']);
                 $events[(int)$dd][] = $row;
             break;
-            
+
             // Multiple-day event
             case 2:
                 list(, $mm, $dd) = explode('-', $row['sdato']);
@@ -134,7 +134,7 @@ function load_month(DB $pdo, $year, $month, $cat)
                     }
                 }
                 break;
-            
+
             // Recurring event
             case 3:
                 list($which,$dd) = explode(':', $row['recur']);
@@ -143,7 +143,7 @@ function load_month(DB $pdo, $year, $month, $cat)
                 break;
         }
     }
-    
+
     // Return events found
     return $events;
 }

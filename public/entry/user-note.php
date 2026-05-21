@@ -76,7 +76,7 @@ if ($count >= 3) {
   //the amount of allowed notes
   mail ('alindeman@php.net,didou@php.net,danbrown@php.net',
 	'[php-notes] Quota exceeded',
-	'Too many notes submitted in one minute.  Consider increasing quota' . "\n" . 
+	'Too many notes submitted in one minute.  Consider increasing quota' . "\n" .
         'Occured at '.date ('M d, Y g:i:s A') . "\n" .
 	"User   : $user\n" .
 	"Section: $sect\n" .
@@ -94,7 +94,7 @@ $sect = trim(preg_replace('/\.php$/','',$sect));
 
 $query = "INSERT INTO note (user, note, sect, ts, status) VALUES (?, ?, ?,NOW(), NULL)";
 $pdo->safeQuery($query, [$user, $note, $sect]);
-$new_id = $pdo->lastInsertId();	
+$new_id = $pdo->lastInsertId();
 $msg = $note;
 
 $msg .= "\n----\n";
