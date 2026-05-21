@@ -14,7 +14,7 @@ foreach($valid_vars as $k) {
 if (!isset($_REQUEST['token']) || md5($_REQUEST['token']) != "19a3ec370affe2d899755f005e5cd90e")
   die("token not correct.");
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 // Set default values
 if (!isset($cm)) $cm = (int)strftime('%m');

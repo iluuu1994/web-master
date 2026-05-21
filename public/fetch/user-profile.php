@@ -36,7 +36,7 @@ function render($result)
 
 $USERNAME = filter_input(INPUT_GET, "username", FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 $stmt = $pdo->prepare("
   SELECT u.username, COALESCE(up.markdown, '') AS markdown, COALESCE(up.html, '') AS html

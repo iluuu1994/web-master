@@ -28,7 +28,7 @@ function error($text, $status)
 
 $USERNAME = filter_input(INPUT_GET, "username", FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 $stmt = $pdo->prepare("SELECT userid, name, email, username, spamprotect, use_sa, greylist, enable FROM users WHERE username = ? AND cvsaccess LIMIT 1");
 if (!$stmt->execute([$USERNAME])) {

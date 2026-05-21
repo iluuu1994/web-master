@@ -301,7 +301,7 @@ function handle_push_mail($payload) {
         return;
     }
 
-    $dbh = DB::connect();
+    $dbh = DB::connectFromEnvironment();
 
     $pusherName = $payload->pusher->name;
     foreach ($payload->commits as $commit) {

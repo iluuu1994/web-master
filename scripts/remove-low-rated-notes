@@ -8,7 +8,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 define('RATING_THRESHOLD', "-5");
 define('AGE_THRESHOLD', '1 year');
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 $query = "SELECT COUNT(*) FROM note";
 $total = $pdo->single($query);

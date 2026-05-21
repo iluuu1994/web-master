@@ -28,7 +28,7 @@ $cat = ["unknown", "User Group Event", "Conference", "Training"];
 $type = [1=>'single',2=>'multi',3=>'recur'];
 
 head("event administration");
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 $id = $_REQUEST['id'] ?? false;
 $action = $_REQUEST['action'] ?? false;

@@ -7,7 +7,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 define('LIMIT', 10);
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 /** --[ pages with most notes ] ------------------- **/
 

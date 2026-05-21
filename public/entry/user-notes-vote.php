@@ -155,7 +155,7 @@ if (!isset($_SERVER['REQUEST_METHOD']) || strtoupper($_SERVER['REQUEST_METHOD'])
 
 // Initialize global PDO database handle
 try {
-    $dbh = DB::connect();
+    $dbh = DB::connectFromEnvironment();
 } catch(PDOException $e) {
     $jsonResponse->message = "The server could not complete this request. Please try again later...";
     echo json_encode($jsonResponse);

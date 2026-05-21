@@ -56,7 +56,7 @@ if (($spamip=is_spam_ip($_SERVER['REMOTE_ADDR'])) || ($spamip=is_spam_ip($ip)) |
 unset($note_lc);
 /* End SPAM Checks ******************************************/
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 /*
 After a discussion in #php about the

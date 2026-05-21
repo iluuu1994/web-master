@@ -8,7 +8,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 if (!isset($_REQUEST['token']) || md5($_REQUEST['token']) != "19a3ec370affe2d899755f005e5cd90e")
   die("token not correct.");
 
-$dbh = DB::connect();
+$dbh = DB::connectFromEnvironment();
 
 $query  = "SELECT DISTINCT note.id,note.sect,note.user,note.note,UNIX_TIMESTAMP(note.ts) AS ts,";
 $query .= "SUM(votes.vote) AS up, (COUNT(votes.vote) - SUM(votes.vote)) AS down,";

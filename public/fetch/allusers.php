@@ -26,7 +26,7 @@ function error($text, $status)
 
 (!isset($_GET['token']) || md5($_GET['token']) != "d3fbcabfcf3648095037175fdeef322f") && error("token not correct.", 401);
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 $stmt = $pdo->prepare("SELECT name, username FROM users WHERE enable AND cvsaccess");
 if (!$stmt->execute()) {

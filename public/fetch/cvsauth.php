@@ -85,7 +85,7 @@ if (!is_valid_cvsauth_token($token)) {
 	exit_forbidden(E_UNKNOWN);
 }
 
-$db = DB::connect();
+$db = DB::connectFromEnvironment();
 if (!verify_username($db, $username)) {
 	exit_forbidden(E_USERNAME);
 }

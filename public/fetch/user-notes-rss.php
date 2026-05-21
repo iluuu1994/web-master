@@ -6,7 +6,7 @@ use App\Query;
 require_once __DIR__ . '/../../include/functions.inc';
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 if (isset($_GET['limit']) && is_numeric($_GET['limit']) && $_GET['limit'] <= 1000) {
   $limit = $_GET['limit'];

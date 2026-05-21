@@ -9,7 +9,7 @@ if (!isset($_REQUEST['token']) || md5($_REQUEST['token']) != "19a3ec370affe2d899
   die("token not correct.");
 
 // Connect and generate the list from the DB
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 $res = $pdo->safeQuery("SELECT username,email,spamprotect FROM users WHERE email != '' AND cvsaccess");
 foreach ($res as $row) {
   echo "$row[username]@php.net: ",

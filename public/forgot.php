@@ -20,7 +20,7 @@ function random_password() {
 
 head("forgotten password");
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 if ($id && $key) {
   if ($n1 && $n2) {

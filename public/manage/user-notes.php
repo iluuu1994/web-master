@@ -38,7 +38,7 @@ at <https://php.net/support>.
 
 Your note has been removed from the online manual.';
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 $action = (isset($_REQUEST['action']) ? preg_replace('/[^\w\d\s_]/', '', $_REQUEST['action']) : '');
 $id = (isset($_REQUEST['id']) ? intval($_REQUEST['id']) : '');

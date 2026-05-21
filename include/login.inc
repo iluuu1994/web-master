@@ -28,7 +28,7 @@ if (isset($_POST["user"], $_POST["pw"])) {
 }
 
 // Login form, if the user is not yet logged in
-if (!$cuser || !$cpw || !verify_password(DB::connect(), $cuser,$cpw)) {
+if (!$cuser || !$cpw || !verify_password(DB::connectFromEnvironment(), $cuser,$cpw)) {
     $_SESSION = [];
     session_destroy();
 

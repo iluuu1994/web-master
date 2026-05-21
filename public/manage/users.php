@@ -61,7 +61,7 @@ $username = filter_input(INPUT_GET, "username", FILTER_SANITIZE_STRIPPED) ?: 0;
 
 head("user administration");
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 # ?username=whatever will look up 'whatever' by email or username
 if ($username) {

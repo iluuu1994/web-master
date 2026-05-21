@@ -63,7 +63,7 @@ if (strlen($username) > 16) {
   die('Username is too long. It must have 1-16 characters.');
 }
 
-$pdo = DB::connect();
+$pdo = DB::connectFromEnvironment();
 
 if (!is_emailable_address($email))
   die("that email address does not appear to be valid");
