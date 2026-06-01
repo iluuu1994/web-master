@@ -109,4 +109,4 @@ $msg .= "approve: https://main.php.net/manage/users.php?action=approve&id=$new_i
 $msg .= "reject:  https://main.php.net/manage/users.php?action=remove&id=$new_id\n";
 $msg .= "view:    https://main.php.net/manage/users.php?id=$new_id\n";
 
-mail($failto,"VCS Account Request: $username",$msg,"From: $from\r\nMessage-ID: <cvs-account-$new_id-admin@php.net>", "-fnoreply@php.net");
+mail($failto,"VCS Account Request: $username",$msg,"From: noreply@php.net\r\nReply-To: $from\r\nMessage-ID: <cvs-account-$new_id-admin@php.net>", "-fnoreply@php.net");
