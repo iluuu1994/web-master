@@ -101,7 +101,7 @@ $from = "\"$name\" <$email>";
 
 // The PEAR guys don't want these requests to their -dev@ list, only -group@
 if ($group != "pear") {
-  mail($mailto,"VCS Account Request: $username",$msg,"From: $from\r\nMessage-ID: <cvs-account-$new_id@php.net>", "-fnoreply@php.net");
+  mail($mailto,"VCS Account Request: $username",$msg,"From: noreply@php.net\r\nReply-To: $from\r\nMessage-ID: <cvs-account-$new_id@php.net>", "-fnoreply@php.net");
 }
 
 $msg .= "\n-- \n";
