@@ -44,7 +44,7 @@ if ($id && $key) {
 <p>You're in the home stretch now. Just choose a new password
 (typing it twice, to avoid typos and another trip around this
 merry-go-round).</p>
-<form method="post" action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>">
+<form method="post" action="/forgot.php">
 password: <input type="password" name="n1" value="<?= hsc($n1)?>" />
 <br />again: <input type="password" name="n2" value="<?= hsc($n1)?>" />
 <br /><input type="submit" value="do it!" />
